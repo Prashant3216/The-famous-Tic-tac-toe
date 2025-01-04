@@ -1,7 +1,14 @@
-<h1>Hello from {{ name }}!</h1>
-{{winner}}
+<h1 class="winner">Hello from {{ name }}!</h1>
+<div class="turn" *ngIf="!winner">
+  {{player[turn]+"'s turn"}}
+</div >
+<h1 class="winner" *ngIf="winner && !isDraw">
+  The winner is {{winner}}
+</h1>
+<h1 class="winner" *ngIf="isDraw">
+  The match is draw
+</h1>
 <div class="div-container">
-
   <div class="box" (click)="handleTicTacToe(0)">{{ticTacToe[0]}} </div>
   <div class="box" (click)="handleTicTacToe(1)">{{ticTacToe[1]}} </div>
   <div class="box" (click)="handleTicTacToe(2)">{{ticTacToe[2]}}</div>
@@ -16,5 +23,5 @@
 <br>
 
 <div>
-  <button (click)="handleReset()">Reset Game</button>
+  <button class="button" (click)="handleReset()">Reset Game</button>
 </div>
