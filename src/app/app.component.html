@@ -1,5 +1,5 @@
 <h1 class="winner">Hello from {{ name }}!</h1>
-<div class="turn" *ngIf="!winner">
+<div class="turn" *ngIf="!winner && !isDraw">
   {{player[turn]+"'s turn"}}
 </div >
 <h1 class="winner" *ngIf="winner && !isDraw">
